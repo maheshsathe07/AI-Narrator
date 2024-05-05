@@ -2,4 +2,4 @@
 venv
 .venv
 __pycache__
-config.json
+# config.json
