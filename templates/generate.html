@@ -1,0 +1,181 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Narration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #db40d3, #76a7c7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="file"] {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            font-size: 16px;
+        }
+        input[type="file"]:focus {
+            outline: none;
+        }
+        input[type="submit"] {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #dd2476, #ff512f);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Upload</h1>
+        <form action="{{url_for('generateSummary')}}" method="post" enctype="multipart/form-data">
+            <input type="file" name="video" accept=".mp4" required>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Narration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #db40d3, #76a7c7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="file"] {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            font-size: 16px;
+        }
+        input[type="file"]:focus {
+            outline: none;
+        }
+        input[type="submit"] {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #db40d3, #76a7c7);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #dd2476, #ff512f);
+        }
+        .loading {
+            position: absolute;
+            bottom: -70px; /* Adjusted bottom position */
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            color: #fff; /* Changed text color to white */
+            font-size: 18px;
+        }
+        .loading.active {
+            display: block;
+        }
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #fff;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Upload</h1>
+        <form id="uploadForm" action="{{url_for('generateSummary')}}" method="post" enctype="multipart/form-data">
+            <input type="file" name="video" accept=".mp4" required>
+            <input type="submit" value="Upload" id="uploadButton">
+        </form>
+        <div class="loading" id="loadingMessage">
+            <div class="loader"></div>
+            Generating narration...
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function() {
+            document.getElementById('loadingMessage').classList.add('active');
+        });
+    </script>
+</body>
+</html>
+
+
+
+

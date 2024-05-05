@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Narration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #db40d3, #76a7c7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        video {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        audio {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>This is your narration</h1>
+        <video controls>
+            <source src="{{ url_for('static', filename='videos/result.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br>
+        <audio src="{{url_for('static', filename='audios/' + audio)}}" type="audio/wav" controls></audio>
+    </div>
+</body>
+</html>
+
