@@ -37,7 +37,7 @@ https://github.com/maheshsathe07/AI-Narrator/assets/123986496/30a0e04c-7e2c-4aa7
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your_username/ai-narrator.git
+    git clone https://github.com/maheshsathe07/AI-Narrator.git
     cd ai-narrator
     ```
 
