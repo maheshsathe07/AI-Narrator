@@ -1,7 +1,7 @@
 {
     "params": {
-        "gemini_api_key": "AIzaSyD3L-yGtOtRzDEytDhoZ9mnU4btsFX0U1w",
-        "audiostack_api_key": "e2f78edb-550d-4fe4-9468-c0739704798f"
+      "gemini_api_key": "YOUR_GEMINI_API_KEY",
+      "audiostack_api_key": "YOUR_AUDIOSTACK_API_KEY"
     }
   }
   
